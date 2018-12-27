@@ -1,4 +1,5 @@
 
+		
 
 def slave():
 	import subprocess 
@@ -43,6 +44,7 @@ def master():
 	a=subprocess.getstatusoutput("ping {} -c 2".format(b))
 	if a[0]!=0:
 		print('this ip is not reachable . Do you still want to add it yes/no')
+		ans=input()
 		if ans=='yes':
 			c='{}          master.avn\n'.format(b)
 			f.write(c)
@@ -97,6 +99,7 @@ def jobtracker():
 	a=subprocess.getstatusoutput("ping {} -c 2".format(b))
 	if a[0]!=0:
 		print('this ip is not reachable . Do you still want to add it yes/no')
+		ans=input()
 		if ans=='yes':
 			c='{}          jt.avn\n'.format(b)
 			f.write(c)
